@@ -1,0 +1,27 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+<div class="app-container">
+  <router-outlet></router-outlet>
+
+  <nav class="bottom-nav">
+    <a routerLink="/catalogo" routerLinkActive="active">
+      <i class="fas fa-car"></i>
+      <span>Catálogo</span>
+    </a>
+    <a routerLink="/reservar" routerLinkActive="active">
+      <i class="fas fa-calendar-check"></i>
+      <span>Reservar</span>
+    </a>
+    <a routerLink="/historial" routerLinkActive="active">
+      <i class="fas fa-clock-rotate-left"></i>
+      <span>Historial</span>
+    </a>
+    <a routerLink="/informacion" routerLinkActive="active">
+      <i class="fas fa-info-circle"></i>
+      <span>Info</span>
+    </a>
+  </nav>
+</div>

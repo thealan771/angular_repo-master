@@ -1,0 +1,143 @@
+.reservar-container {
+  padding: 30px;
+  background: linear-gradient(to right, #000000, #0a0a0a);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reservar-container .imagen-vehiculo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.reservar-container .imagen-vehiculo img {
+  width: 90%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+  box-shadow: 0 0 15px rgba(255, 82, 82, 0.5);
+}
+
+.reservar-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reservar-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.reservar-container form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.reservar-container form select,
+.reservar-container form input {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.reservar-container form button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reservar-container form button:hover {
+  background-color: #ffaa00;
+}
+
+.reservar-container form button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Responsivo: Móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .reservar-container {
+    padding: 20px;
+  }
+
+  .reservar-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .reservar-container .imagen-vehiculo img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .reservar-container form {
+    gap: 12px;
+  }
+
+  .reservar-container form input,
+  .reservar-container form select {
+    font-size: 15px;
+  }
+
+  .reservar-container form button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* Wearables y pantallas ultra pequeñas */
+@media (max-width: 360px) {
+  .reservar-container {
+    padding: 15px 8px;
+  }
+
+  .reservar-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .reservar-container .imagen-vehiculo img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .reservar-container form {
+    gap: 10px;
+  }
+
+  .reservar-container form label {
+    font-size: 0.9rem;
+  }
+
+  .reservar-container form select,
+  .reservar-container form input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .reservar-container form button {
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="historial-container">
+  <h2>Historial de Rentas</h2>
+  <div class="historial-grid" *ngIf="historial.length > 0; else noHistorial">
+    <div class="historial-card" *ngFor="let renta of historial; let i = index">
+      <h3>{{ renta.nombre }}</h3>
+      <p>Fecha: {{ renta.fecha }}</p>
+      <p>Hora: {{ renta.hora }}</p>
+      <p>Duración: {{ renta.duracion }}</p>
+      <p>Precio por día: {{ renta.precio | currency:'USD' }}</p>
+      <span 
+        [class.activo]="renta.estado === 'Activo'" 
+        [class.finalizado]="renta.estado === 'Finalizado'">
+        {{ renta.estado }}
+      </span>
+
+      <!-- Botón para marcar como entregado -->
+      <button *ngIf="renta.estado === 'Activo'" (click)="marcarComoEntregado(i)">
+        Marcar como Entregado
+      </button>
+    </div>
+  </div>
+  <ng-template #noHistorial>
+    <p>No tienes reservas realizadas.</p>
+  </ng-template>
+</div>

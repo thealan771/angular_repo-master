@@ -1,0 +1,11 @@
+<div class="catalogo-container">
+  <h2>PEPE'S Drive Experience</h2>
+  <div class="autos-grid">
+    <div class="auto-card" *ngFor="let auto of autos">
+      <img [src]="auto.imagen" [alt]="auto.nombre" />
+      <h3>{{ auto.nombre }}</h3>
+      <p>Precio por día: <strong>{{ auto.precio | currency:'USD' }}</strong></p>
+      <button class="button" (click)="irAReserva(auto.nombre, auto.precio, auto.imagen)">Reservar</button>
+    </div>
+  </div>
+</div>

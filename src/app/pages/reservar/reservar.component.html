@@ -1,0 +1,33 @@
+<div class="reservar-container">
+  <h2>Reservar Vehículo</h2>
+
+  <!-- Imagen del vehículo -->
+  <div *ngIf="imagenAuto" class="imagen-vehiculo-container" style="text-align:center; margin-bottom: 15px;">
+    <img 
+  [src]="imagenAuto" 
+  alt="Imagen del vehículo" 
+  style="max-width: 100%; max-height: 250px; object-fit: contain; border-radius: 8px; margin: 0 auto; display: block;" 
+/>
+
+  </div>
+
+  <form (ngSubmit)="confirmarReserva()" #formReserva="ngForm">
+    <p><strong>Vehículo:</strong> {{ reserva.auto }}</p>
+    <p><strong>Precio por día:</strong> {{ precioPorDia | currency:'USD' }}</p>
+
+    <label for="fechaInicio">Fecha de inicio:</label>
+    <input type="date" id="fechaInicio" [(ngModel)]="reserva.fechaInicio" name="fechaInicio" required />
+
+    <label for="horaInicio">Hora de inicio:</label>
+    <input type="time" id="horaInicio" [(ngModel)]="reserva.horaInicio" name="horaInicio" required />
+
+    <label for="duracion">Duración:</label>
+    <select id="duracion" [(ngModel)]="reserva.duracion" name="duracion" required>
+      <option value="" disabled selected>Selecciona duración</option>
+      <option value="Medio día">Medio día</option>
+      <option value="Día completo">Día completo</option>
+    </select>
+
+    <button type="submit" [disabled]="!formReserva.form.valid">Confirmar Reserva</button>
+  </form>
+</div>

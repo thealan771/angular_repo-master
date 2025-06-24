@@ -1,0 +1,70 @@
+.app-container {
+  padding-bottom: 60px; /* espacio para navbar fijo */
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.bottom-nav a {
+  color: #fffbfb;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.3s, transform 0.3s;
+  padding: 5px 10px;
+}
+
+.bottom-nav a.active {
+  color: #00e5ff;
+}
+
+.bottom-nav a:hover {
+  color: #00e5ff;
+  transform: scale(1.05);
+}
+
+.bottom-nav i {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+/* ------------------ Media Queries ------------------ */
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .bottom-nav {
+    padding: 8px 0;
+  }
+
+  .bottom-nav a {
+    font-size: 13px;
+  }
+
+  .bottom-nav i {
+    font-size: 18px;
+  }
+}
+
+/* Para pantallas pequeñas (teléfonos pequeños, wearables) */
+@media (max-width: 400px) {
+  .bottom-nav a {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  .bottom-nav i {
+    font-size: 16px;
+  }
+}
